@@ -86,7 +86,7 @@ allUsers2 = fromTable :: Query (Rel User)
 </pre><pre>
      userRoles2 login = do
        r@(u:.r) &lt;- from $ innerJoin roles recordTable
-                        $ r u -&gt; r~&gt;RoleUserId ==. u~&gt;UserKey
+                        $ \r u -&gt; r~&gt;RoleUserId ==. u~&gt;UserKey
        where $ u~&gt;UserLogin ==. val login
        return r
 </pre></div><div class="top"><p class="src"><span class="keyword">class</span>  <a name="t:Record" class="def">Record</a> v  <span class="keyword">where</span></p><div class="doc"><p>Class for entities which have columns
